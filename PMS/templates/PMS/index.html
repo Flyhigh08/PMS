@@ -1,0 +1,253 @@
+{% extends 'PMS/base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+
+{% block title_html %}PMS{% endblock %}
+
+ {% block Header %}
+                   
+                        
+                        
+            
+        <div class="container2">
+            <nav class="navbar navbar-expand-lg my-lg-4 col-md-8">
+                <!--<a class="navbar-brand" href="#">Navbar</a>-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+                    <div class="mx-2">
+                        <ul class="navbar-nav mr-auto">
+       
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Infomation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">News</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mr-auto">
+                        <ul>
+                            <li class="nav-item login" id="Login">
+                                <a class="nav-link" href="#Login">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                                                                                            
+     {% if messages %}
+        {% for message in messages %}
+                <div class="alert {{ message.tags}} m-3" id="msg" role="alert">
+            {{ message }}
+     </div>
+        {% endfor %}
+     {% endif %}
+                                            
+            <div class="login-page">
+                <div class="form">               
+                    <form class="login-form" method="post" id="log_in" enctype="multipart/form-data">
+                                {% csrf_token %}
+                            <input type="text" id="log_in" placeholder="username" name="username"/>
+                            
+                           
+                                <input type="password" class="rounded-8" placeholder="password" name="Password"/>
+                           
+                                <button  class="btn btn-primary rounded-8">Login</button>
+                           
+                                <p class="text-muted">Not Register ? <a href="{% url 'Register' %}">Register</a> </p>
+                    </form>      
+                        </div>
+                </div>              
+                  </nav>
+              </div> 
+{% endblock %}
+
+{% block ul %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">OverView</a>
+                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact Us</a>
+                                </li>
+{% endblock %}
+
+{% block Section %}
+    <section class="Home_Section">
+        <div class="container">
+                <div class="row">
+                        <div class="Home_Slider owl-carousel"> 
+                             {% for Home_Slide in Slide.all %}
+                            <div class="Bg_Img Home_bg" data-setbg="{{Home_Slide.SlideImg.url}}" data-hash="" >
+                                  <div  class="col-sm-8">
+                    <h1 class="">Prisoner Management System</h1>
+                      </div>
+                                <p>{{Home_Slide.SlideTitle}}<br> </p>  
+                                    </div>
+                                {% endfor %}
+                                </div>
+                        </div>
+              </div>
+     </section>
+
+        <section class="overview">
+            <div class="row mt-5">
+                            <div class="Top_News">
+						          <h2 class="News_title">Today Top News</h2>
+						              <div class="post">
+                        {% for Today_Top_News in news.all %}      
+							     <div class="post_items">
+								        <img src="{{Today_Top_News.image.url}}" alt="">
+								                <div class="post_text">
+									               <div class="post-cont">
+										  <span>{{Today_Top_News.TopDate}}</span> <span>|</span> <span> HiviPunde</span>
+									               </div>
+									       <h5>{{Today_Top_News.Heading}}</h5>
+								                </div>
+							     </div>
+                     {% endfor %}       
+							
+						              </div>
+                            </div>
+                          
+                          <div class="Top_News2">
+                                <div class="col-md-12 text-center ">
+                                                <h2 class="mb-2">Infomation</h2>
+                                    </div>
+                              
+                              
+				                        <div class="col my-2">
+                                    
+                                            <div class="row text-justify">
+                                                    <div class="col-md-6 d-flex">
+                
+        		                                      <div class="speaker  d-flex align-items-stretch pl-1">
+                    
+                                                              <div class="Head_img" style="background-image: url({% static 'PMS/images/staff-2.jpg' %}); background-size: 400px 520px;  width:300px;height:520px";>
+                        
+                                                            <div class="text text-absolute">
+                            
+                                                            <h3>Robert Bonner</h3>
+                            
+		        			                               <span class="position">Mkuu wa Magereza Tanzania</span>
+		      
+		        		                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+
+        	                   </div>
+                              
+        
+    	           <div class="col-lg-2 mt-4">
+             
+                        {% for information in Basic_Info.all %}
+                                    <div class="text">
+                                
+                                            <h4 class="mb-2">{{information.First_Name}}</h4>
+                                            <span class="position">{{information.title}}</span>
+                                        <p class="text text-justify mb-2">{{information.Detail}}</p>
+
+                                    </div>
+        
+                        {% endfor %}
+                    
+                </div>
+        </div>
+    </section>                
+
+
+              
+            <section class="contact_us">
+                  <div style="background-image: url({% static 'PMS/images/Prison.jpg' %});background-repeat: no-repeat; background-size: 1000px 600px;  width:100%;height:100%">    
+                    
+            <div class="container   mt-2">            
+                    <div class="row">
+            
+                        <div class="col-8 mt-2">
+                            <h2 class="contact_title">Get in Touch</h2>
+                                </div>
+                                    <div class="col-lg-6 mt-3">
+                                        <form class="form-contact contact_form" method="Post" id="contactForm" enctype="multipart/form-data" name="Contact_form" novalidate="novalidate"
+                                              >
+                                            {% csrf_token %}
+                                        <div class="row">
+                                                <div class="col-12">
+                                            <div class="form-group">
+                  
+                                           
+                                                {{ Contact_form.message|as_crispy_field }}
+                                                 
+                                                        </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                
+                                                    {{ Contact_form.name|as_crispy_field }}
+                                                </div>
+                                                </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    {{ Contact_form.email|as_crispy_field }}
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                    <div class="form-group">
+                                                   {{ Contact_form.subject|as_crispy_field }}
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                        <div class="form-group mt-3">
+                                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                              
+                      
+                    
+                                        <div class="col-md-6 mx-auto offset-lg-1"> 
+                            <table>
+                            
+                                        <tr>
+                                  
+                                            <td><h1>Have a question?</h1> 
+                                            <h6>Any Suggestion or advice?</h6></td>
+                                        </tr>
+             
+                                        <tr>
+                                            <td>Wizara ya Mambo ya ndani</td>
+                                        </tr>
+             
+                                        <tr>
+                                            <td>400E,Shabaan Robert</td>
+                                        </tr>
+                        
+                          `             <tr>
+                                            <td>Dar es salaam</td>
+                                        </tr>
+        
+                                        <tr>
+                                            <td>00000000</td>                               
+                                        </tr>
+                             </table>
+                                            
+                           </div>
+                        
+                      </div>
+                
+                    </div>
+               </div>
+         </section>  
+{% endblock %}     
+
+

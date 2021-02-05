@@ -1,0 +1,244 @@
+{% extends 'PMS/base.html' %}
+
+{% load static %}
+
+
+
+
+{% block title_html %}PMS||Details{% endblock %}
+
+{% block Brand %} <a class="navbar-brand" a class="nav-link" href="{% url 'home' %}">Prison Management System</a> {% endblock %}
+
+ {% block nav %}
+                                               
+                                                
+                    
+                            {% if user.is_authenticated %}
+                                                 <li class="nav-item active">
+                                                    <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+                                                    </li>
+                 
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#"></a>
+                                                    </li>
+          
+                                                        <li class="nav-item">
+                                                        <a class="nav-link" href="#"></a>
+                                                        </li>
+                                              <li class="nav-item col-lg-6 offset-10">
+                                                        <a class="nav-link" href="{% url 'home' %}">logout</a>
+                                                        </li>
+                                    
+                                                {% else %}
+                                                        <li class="nav-item col-lg-6 offset-10">
+                                                        <a class="nav-link" href="{% url 'home' %}">login</a>
+                                                {% endif %}
+{% endblock %}
+ 
+
+
+ {% block Section %}
+  <section class="Details">
+      <div class="container">
+        
+          {% if user.is_authenticated %}
+    
+                        <p>Welcome</p><p>{{ user.username }}</p>
+                       
+              
+          {% else %}
+          
+          
+          
+          {% endif %}
+          
+          
+          
+          
+                        <div class="row mr-0m">
+
+            <div class="links col-sm-3 pl-1">
+                     
+                <div class="text-left"> 
+              
+            <h2 class="border-bottom">Links</h2>
+            <ul class="list-unstyled">
+            
+              <li>Prisoner Information</li>
+               
+                <div class="mt-2">
+              <li>Transfer form</li>
+                </div>
+                <div class="mt-2">
+              <li>Visitor information</li>
+                </div>
+            </ul>
+          </div>
+               </div>
+                            
+   
+     
+        <div class="Pcontent col-md-7">
+          <div class="text-justify">
+            <h4 class="border-bottom"></h4>
+           <div class="container-fluid">         
+ <div class="card shadow mb-4">
+     <div class="card-body">
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">Prisoner Infromation</h6>
+              <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fas fa-save fa-sm text-white-50"></i></a>
+            </div>
+         
+         <form method="POST" action="{% url 'detail' %}">
+             {% csrf_token %}
+         <div class="form-row">    
+         <div class="form-group col-md-6">
+               <input class="input--style-4" type="text" name="first_name" placeholder="first names" onfocus="this.placeholder = 'eg.John A'" onblur="this.placeholder = 'Enter Your First Names'" required pattern="[A-Za-z]+"/>
+                   
+                  </div>
+                  <div class="form-group col-md-6">
+                        <input class="input--style-4" type="text" name="first_name" placeholder="Last name" onfocus="this.placeholder = ''" onblur="this.placeholder = ''" required pattern="[A-Za-z]+"/>
+                    
+                    
+                  </div>
+                </div>
+             <div class="form-row"> 
+                 <div class="form-group col-md-4">
+                       <input class="input--style-4" type="text" name="first_name" placeholder="D" onfocus="this.placeholder = 'Gender" onblur="this.placeholder = ''" required pattern="[A-Za-z]+"/>
+        
+                    
+                </div>
+             
+                    <div class="form-group col-md-4">
+                          <input class="input--style-4" type="Date" name="" placeholder="Date of Birth" >
+                         
+                    
+                </div>
+                 
+             </div>
+             
+             <div class="form-row"> 
+                   
+                
+             
+             </div>
+
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">PMS Form</h6>
+             
+       <button type="submit" class="btn btn-primary ml-3 "><i class="fas fa-save fa-sm text-white-50"></i>Submit</button> 
+       
+            </div>  
+         </form>
+              
+         
+        
+                </div>
+               </div>
+              </div>
+         
+         
+          </div>
+        </div>
+                
+
+              
+                 <div class="Left_Side col-md-2">    
+              <div class="Profile_Info d-flex mb-5">   
+                  
+
+                  
+                <div class="col-md-2 mr-4">
+                       <div class="non">
+                        <div class="profile" style="background-image: url({% static 'PMS/images/staff-2.jpg' %})">
+                        <a  href="#"></a>
+                     </div>
+                  </div>
+                  </div> 
+                  
+                <div class="col-md-2 mr-4">
+                       <div class="non">
+                        <div class="profile" style="background-image: url({% static 'PMS/images/logo2.jpg' %})">
+                        <a  href="#"></a>
+                     </div>
+                  </div>
+                  </div>
+                  
+                   <div class="col-md-2 mr-4">
+                       <div class="non">
+                        <div class="profile" style="background-image: url({% static 'PMS/images/pr.jpg' %})">
+                        <a  href="#"></a>
+                     </div>
+                  </div>
+                  </div> 
+                   <div class="col-md-2 mr-4">
+                       <div class="non">
+                        <div class="profile" style="background-image: url({% static 'PMS/images/p.jpg' %})">
+                        <a  href="#"></a>
+                     </div>
+                  </div>
+                  </div> 
+                  
+              </div>
+            
+                <div >      
+             <h4 class="mb-4">Calendar</h4>
+            <p>Promosheni zetu</p>
+             {% for information in Basic_Info.all %}
+                                    <div class="text">
+                                
+                                            <h4 class="mb-2">{{information.First_Name}}</h4>
+                                            <span class="position">{{information.title}}</span>
+                                        <p class="text text-justify mb-2">{{information.Detail}}</p>
+
+                                    </div>
+        
+                        {% endfor %}
+                    
+                     </div>
+                     
+            <div class="sidebar_offer">
+                {% for offers in offers.all %}      
+								<div class="sidebar_offer_background" style="background-image: url('{{offers.image.url}}')">
+								<div class="sidebar_offer_content">
+									<div class="sidebar_offer_destination">{{offers.offer_destination}}</div>
+									<div class="sidebar_offer_percent">{{offers.sidebar_offer_percent}}</div>
+									<div class="sidebar_offer_title">{{offers.sidebar_offer_percent}}</div>
+									<div class="sidebar_offer_text">{{offers.offer_text}}</div>
+									
+								</div>
+                                    <div class="sidebar_offer_button"><a href="offers.html">See Offer</a></div>
+							</div>
+                {% endfor %}
+                     </div>
+       
+          </div>
+                
+                
+            </div>
+                </div>
+     
+                   <!-- <div class="row">
+  
+                    {% if messages %}
+                        {% for message in messages %}
+                    <button class="close" data-dismiss="alert">
+                       <small><sup>x</sup></small>
+                        </button>
+          
+                            {{ message }}
+              
+             
+                        {% endfor %}
+                            {% endif %}
+          
+
+                    </div>-->
+      
+      
+    </section>  
+
+
+
+{% endblock %} 
+

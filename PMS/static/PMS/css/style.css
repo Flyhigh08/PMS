@@ -1,0 +1,514 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 300;
+    line-height: 1;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    background: hsla(353, 6%, 43%, 0.16) ;
+    overflow-X: hidden;
+    
+	
+}
+
+section {
+    width: 90%;
+    height: 800px;
+    margin: 10px;}
+
+
+.navbar {
+    width: 80%;
+    height: 70px;
+    left: 27%;
+    position: absolute;
+    top:2%;
+    background:rgba(173, 216, 230,0.71);
+    z-index: 2;
+    box-shadow:  0 10px 20px 10px rgba(0, 0, 0, 0.6), 0 20px 20px 0 rgba(0, 0, 50, 0.7);
+   
+}
+
+.navbar li {       		
+			       text-shadow:  0 0 3px #ADD8E6, 0 0 5px #B0C4DE;
+			       font-size: 20px;
+					list-style:none;
+					float: left;
+					padding: 0px 8px;
+					position: relative;
+			}
+
+
+.container2{
+    position: absolute;
+    width: 100%;
+    height:70px;
+    left:-2px;
+    top:500px;
+    z-index: 2;
+    
+}
+/*=============================================================================================
+
+                                Home Section
+
+============================================================================================*/
+.Home_Section{
+
+    left:50px;                                
+    box-shadow: 25px 18px 25px 5px rgba(80, 119, 137, 0.71);
+    top:10px;
+    margin-bottom:20px;
+    
+}
+.Bg_Img {
+    position: relative;
+    top: -100px;
+    left: -30px;
+    background-repeat: space;
+    background-size: cover;
+     background: transparent;
+}
+.form {
+   position: absolute;
+   left:400px;
+    z-index: 1;
+    background:rgba(126, 153, 154, 0.64);
+    max-width: 280px;
+    margin: 0 auto 100px;
+    padding: 10px;
+    text-align: center;
+}
+
+.form input{
+    font-family:"Roboto",sans-serif;
+    outline: 1;
+    width: 100%;
+    border: 1px solid rgba(63, 172, 198, 0.49);
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background: transparent;
+}
+
+.form span{
+    color: #e52b56;
+    font-size: 14px;
+    margin:-20px 20px;
+}
+
+.form button {
+    font-family:"Roboto",sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4caf50;
+    width: 90%;
+    border: 0;
+    padding: 15px;
+    color: aqua;  
+}
+
+
+.form .register-form {display:none;}
+.login-form {display:none;}
+
+
+/*==================================================================================
+
+                            OverView
+
+=====================================================================================*/
+
+.overview {
+    position:relative;
+    left:50px;
+    margin-bottom: 40px;
+}
+
+
+.Top_News {
+	margin:10px;
+    padding-top: 40px;
+    background:rgba(132, 181, 181, 0.37);
+    position: relative;
+    width: 40%;
+    background: transparent;
+    height: 95%;
+    overflow-y: hidden;
+    box-shadow: 25px 18px 25px 5px rgba(46, 69, 62, 0.46);  
+}
+
+
+
+.Top_News:hover {
+                    overflow: auto;
+                    }
+
+
+.Top_News .News_title {
+	font-size: 24px;
+	font-weight: 700;
+    text-align: center;
+	margin-bottom: 45px;
+	font-family: "Helvetica Neue Bold", sans-serif;
+}
+
+
+
+.Top_News .post .post_items {
+	margin-bottom: 18px;
+	overflow: hidden;
+}
+
+.Top_News .post .post_items img {
+	float: left;
+	width: 80px;
+	height: 80px;
+	margin-right: 18px;
+    margin-left:12px;
+    border-radius:5px; 
+    box-shadow: 10px 25px 30px 10px rgba(40, 108, 144, 0.76);
+}
+
+.form-contact .form-control{
+  border: 1px solid #f0e9ff;
+  border-radius: 5px;
+  height: 100%;
+  padding-left: 18px;
+  font-size: 13px;
+  background: transparent;
+  color:aqua;
+}
+
+.Top_News .post .post_items .post_text {
+	overflow: hidden;
+}
+
+.Top_News .post .post_items .post-cont {
+	font-size: 12px;
+	color: #71767b;
+	font-family: "Helvetica 45 Light", sans-serif;
+	margin-bottom: 10px;
+}
+
+.Top_News .post .post_items .post-cont span {
+	margin-right: 5px;
+	padding-right: 5px;
+	display: inline-block;
+}
+
+
+
+.Top_News .post .post_items h5 {
+	font-size: 18px;
+	font-family: "Helvetica 45 Light", sans-serif;
+}
+
+.Top_News .post .post_items h5 a {
+	color: #0b7ef2;
+}
+
+.Top_News2, .row{
+    background:rgba(132, 181, 181, 0.37);
+    background: transparent;
+    height: 95%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-y: hidden;     
+}
+
+
+
+
+/*==============================================================================
+
+
+                                Content-section
+
+
+==================================================================================*/
+
+.content-section{
+    position: relative;
+    width: 60%;
+    background:rgba(132, 181, 181, 0.34);
+    background: transparent;
+    top: 120px;
+    
+    left: 80px; 
+    padding-bottom: 150px;
+    box-shadow: 10px 8px 5px 8px rgba(43, 129, 168, 0.53);
+}
+
+.content-section{ box-sizing: border-box;
+    font-size: 14px;
+    background: transparent;}
+
+
+.contact_us{
+        position: relative;           
+        left:50px;            
+        box-shadow: 25px 18px 25px 5px rgba(80, 119, 137, 0.71);
+        margin-bottom: 40px; 
+}
+
+.contact_us {	
+    position: relative;
+  
+    }
+
+
+.contact_us h1,h6{margin: 0px 10px 60px 10px;}
+
+.contact_us table{
+
+                        background: transparent;
+                        opacity: 0.8;
+                        background:;
+                        height: 400px;
+                        width: 300px;
+                        box-shadow: 0 8px 16px 30px rgba(0, 0, 0, 0.32);
+                        border-radius: 10px 100px 50px 100px;}
+
+
+.contact_us td{
+        color: aqua;
+        text-align: right;}
+
+.contact_us td :nth-child(1){
+    background:rgba(148, 101, 196, 0.57);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.9);
+    text-align: center;
+     border-radius: 10px 50px 10px 40px;}
+
+.contact_us td :nth-child(2){  
+                                    box-shadow: 0 8px 16px 30px rgba(0,0,0,0.2);
+                                    margin-top:10px;
+                                    text-align: center;
+                                    border-radius: 100px 50px 100px 50px;}
+
+
+/*===================================================================================
+
+                            
+                                Details
+
+
+===================================================================================*/
+.Details container{
+    position: relative;
+    background:rgba(132, 181, 181, 0.34);
+    background: transparent;
+    top: 120px;
+    left: 80px; 
+    box-shadow: 10px 8px 5px 8px rgba(43, 129, 168, 0.53);
+    
+}
+
+
+.Details{
+   padding: 30px;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    
+   
+}
+
+.Details ul li{
+    position: relative;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+.links{
+     position: relative;  
+}
+
+.Pcontent{
+    position: relative;
+    top: 70px;
+    margin: 0px;
+    left: -90px;
+}
+.Pco{
+    position: relative;
+    top: 110px;
+    
+}
+
+
+.Left_Side{
+     position: relative;
+    top: 30px;
+    margin: 0px;
+    right:90px; 
+}
+
+.Profile_Info{
+    position: relative;
+    left: 2px;
+}
+
+.profile{
+    width: 50px;
+    height: 50px;
+    color: beige;
+    border: solid;
+    border-radius: 100px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+    display: inline-block;
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+.sidebar_offer_background{
+	position: relative;
+	top: 0;
+	left: -30px;
+	width: 58%;
+	height: 70%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+.sidebar_offer_content{
+	background: rgba(38, 87, 196, 0.51);
+	color: #FFFFFF;
+    height: 70%;
+	padding-top: 21px;
+	padding-left: 33px;
+	padding-right: 30px;
+	padding-bottom: 40px;
+}
+
+.sidebar_offer_destination{
+	font-size: 10px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+.sidebar_offer_percent{
+	font-size: 68px;
+	font-weight: 100;
+	line-height: 0.75;
+	margin-top: 4px;
+}
+.sidebar_offer_title{
+	font-size: 18px;
+	font-weight: 400;
+	margin-top: 4px;
+}
+
+.sidebar_offer_text{
+	font-size: 10px;
+	font-weight: 500;
+	line-height: 1.77;
+	text-align: center;
+	margin-top: 8px;
+}
+
+.sidebar_offer_button{
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+	bottom: -20px;
+	width: 175px;
+	height: 41px;
+    top:180px;
+	background: rgba(19,26,47,1);
+	text-align: center;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+
+.sidebar_offer_button:hover{
+	background: rgba(24, 44, 103, 0.8);
+}
+
+.sidebar_offer_button a{
+	display: block;
+	line-height: 41px;
+	font-size: 12px;
+	font-weight: 500;
+	color: #FFFFFF;
+}
+
+
+.sidebar_offers{
+	margin-top: 52px;
+  }
+
+.sidebar_offer{
+    position: relative;
+	width: 400px;
+    height: 600px;
+    
+	padding-top: 0px;
+	padding-left: 21px;
+	padding-right: 30px;
+}
+/*===========================================================================================
+
+                                        Footer_Section
+                                
+==============================================================================================*/
+.Copyright{
+    position: relative;
+    left: 130px;
+}
+
+.social {
+    color: rgba(10, 102, 227, 0.71); 
+    font-size: 1.2em;  
+}
+
+
+
+.footer_section li:hover a{
+        text-decoration: none;
+        color: rgba(239, 64, 12, 0.79);
+}
+.footer_section{
+    margin-top: 120px;
+}
+
+.socialt{
+    position: relative;
+    left: 190px;
+    color: rgba(105, 160, 235, 0.65); 
+    font-size: 1.5em
+    
+}
+
+.socialp{
+    /*position: relative;
+    left: 190px;*/
+    color: rgba(229, 4, 56, 0.78); 
+    font-size: 1.5em
+    
+}
+.socialr{
+    position: relative;
+    left: 200px;
+    color: rgba(72, 32, 206, 0.65); 
+    font-size: 1.5em;}
+
+
+
+/*==========================================================================*/
+
+
